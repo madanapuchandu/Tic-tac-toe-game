@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+#turnIndicator {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1; /* Makes board square */
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid white;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+    aspect-ratio: 1;
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.reset-btn {
+    margin-top: 15px;
+    padding: 12px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #6a11cb;
+    color: white;
+}
+
+.winner-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 2em;
+}
+
+.winner-screen button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.winner-screen button:hover {
+    background: #6a11cb;
+    color: white;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+    .board {
+        max-width: 250px;
+    }
+    .cell {
+        font-size: 1.5em;
+    }
+    .winner-screen {
+        font-size: 1.5em;
+    }
+}
